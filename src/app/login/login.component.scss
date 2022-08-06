@@ -1,0 +1,15 @@
+.image{
+  height:40em;
+  background-size:cover;
+  width:auto;
+  background-image:url('https://images.fridaymagazine.ae/1_2314819/imagesList_0/3576622518_main.jpg');
+  background-position:50% 50%;
+}
+.bg-text{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
+  border: 3px solid #f1f1f1;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}

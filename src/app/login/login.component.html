@@ -1,0 +1,79 @@
+<div class="container vh-100 image" >
+  <div
+    class="row d-flex justify-content-center align-items-center my-auto border vh-100"
+  >
+    <div class="col-6 border bg-text text-center position-absolute text-white fw-bold w-25 top-50">
+      <h4 class="d-flex justify-content-center">Welcome to our site</h4>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="col-12">
+          <label for="Username" class="form-label">Username</label>
+          <input
+            type="text"
+            id="Username"
+            name="Username"
+            class="form-control"
+            formControlName="username"
+            [ngClass]="
+              form.controls['username'].invalid &&
+              form.controls['username'].touched
+                ? 'border-danger'
+                : ''
+            "
+          />
+          <div
+            *ngIf="
+              form.controls['username'].invalid &&
+              form.controls['username'].touched
+            "
+            class="alret alert-danger"
+          >
+            <div
+              *ngIf="form.controls['username'].errors?.required"
+              class="text-danger"
+            >
+              username is required.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="Password" class="form-label">Password</label>
+          <input
+            type="text"
+            id="Password"
+            class="form-control"
+            formControlName="password"
+            [ngClass]="
+              form.controls['password'].invalid &&
+              form.controls['password'].touched
+                ? 'border-danger'
+                : ''
+            "
+          />
+          <div
+            *ngIf="
+              form.controls['password'].invalid &&
+              form.controls['password'].touched
+            "
+            class="alret alert-danger"
+          >
+            <div
+              *ngIf="form.controls['password'].errors?.required"
+              class="text-danger"
+            >
+              password is required.
+            </div>
+            <div
+              *ngIf="form.controls['password'].errors?.pattern"
+              class="text-danger"
+            >
+              password is not secure.
+            </div>
+          </div>
+        </div>
+        <div class="col-12 my-2">
+          <button type="submit" class="btn btn-primary px-4">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
